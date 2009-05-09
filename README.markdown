@@ -14,11 +14,10 @@ Simply place the doctrine directory in your modules dir and enable it as a modul
 Future Work
 -----------
 
+
  + Provide CLI interface for module, schema auto-generation 
  
 Support
 -------
-
-Nope, sorry!
 
 matt@ninjapenguin.co.uk
