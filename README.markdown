@@ -13,9 +13,11 @@ Simply place the doctrine directory in your modules dir and enable it as a modul
 
 Future Work
 -----------
+I plan to integrate the future ideas into the module:
 
-
- + Provide CLI interface for module, schema auto-generation 
+ + Provide CLI interface for module, schema auto-generation
+ + Integration with Unit Testing suite and migrations
+ + Caching
  
 Support
 -------
