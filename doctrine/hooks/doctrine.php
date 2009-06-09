@@ -39,13 +39,23 @@ class DoctrineLoader
     {
         //Make use of Kohanas transparent file structure
 		foreach (Kohana::include_paths() as $path) {
-		  $path .= "models".DIRECTORY_SEPARATOR.strtolower($class).'.php';
+		  $orig = $path;
+		  $path1 = $path . "models".DIRECTORY_SEPARATOR.strtolower($class).'.php';
+		  $path2 = $path . "models/generated".DIRECTORY_SEPARATOR.strtolower($class).'.php';
+		  //^^ Bit of a hack to allow for generated doctrine models
+		  
 		  //Only add the directory if it is valid
-		  if(file_exists($path)) 
+		  if(file_exists($path1)) 
 		  {
-		      include $path;
+		      include $path1;
 		      return true;
-	      }
+	      } else {
+	          if(file_exists($path2))
+	          {
+	              include $path2;
+	              return true;
+	          }
+	      }	      
 		}
     }
     
